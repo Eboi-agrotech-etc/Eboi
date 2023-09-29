@@ -4,8 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('routes/index');
-const signupRouter = require('routes/signin');
+const indexRouter = require('./routes/index');
+const signupRouter = require('./routes/sign');
 
 const app = express()
 const port = 3000
@@ -15,6 +15,7 @@ app.set('views');
 app.set('view engine', 'ejs');
 
 // static directory setup
+app.use(express.static('node_modules/bootstrap-icons/font'));
 app.use(express.static('node_modules/bootstrap/dist/css'));
 app.use(express.static('node_modules/bootstrap/dist/js'));
 app.use(express.static('node_modules/@popperjs/core/dist/umd'));
