@@ -1,10 +1,20 @@
-/* eboi app */
-main {
-    background: #6C935A;
+body {
+    --background-primary: #6C935A;
+    --background-secondary: #5D7E4E;
+    --btn-primary: #66AF5B
 }
 
-#eboi-nav {
-    
+#eboi-navbar {
+    background: var(--background-secondary);
+}
+
+.btn-eboi {
+    background: var(--btn-primary) !important;
+}
+
+/* eboi app */
+main {
+    background: var(--background-primary);
 }
 
 /*end*/
