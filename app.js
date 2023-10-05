@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const ejs = require('ejs');
 
 const indexRouter = require('./routes/index');
 const signupRouter = require('./routes/sign');
@@ -11,15 +12,17 @@ const app = express()
 const port = 3000
 
 // view engine setup
-app.set('views');
+app.set(path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // static directory setup
-app.use(express.static('node_modules/bootstrap-icons/font'));
-app.use(express.static('node_modules/bootstrap/dist/css'));
-app.use(express.static('node_modules/bootstrap/dist/js'));
-app.use(express.static('node_modules/@popperjs/core/dist/umd'));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
+app.use(express.static(path.join(__dirname, 'node_modules/jquery-mask-plugin/dist')));
+app.use(express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font')));
+app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
+app.use(express.static(path.join(__dirname, 'node_modules/@popperjs/core/dist/umd')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(logger('dev'));
 app.use(express.json());

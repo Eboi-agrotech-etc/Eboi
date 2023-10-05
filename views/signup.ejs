@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+    <title> <%= title %> </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/bootstrap-icons.min.css'>
+
+    <script src='/js/script.js'></script>
+</head>
+<body class="d-flex flex-column p-0" style="min-height: 100vh;" data-bs-theme="light">
+    <%- include('components/gov-navbar'); -%> 
+
+    <!--eboi navbar-->
+    <%- include('components/eboi-navbar'); -%> 
+
+    <%
+        const date = new Date();
+    %>
+
+    <!--eboi interface-->
+    <main class="d-flex flex-fill justify-content-center align-items-center py-5" data-bs-theme="light">
+        <form action="" class="card rounded-3 shadow p-5 bg-body needs-validation" novalidate>
+            <div class="d-flex justify-content-center mb-3">
+                <img src="/assets/eboi-logo.png" style="width: 8rem;">
+            </div>
+
+            <div class="d-flex flex-column gap-3">
+                <div>
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="invalid-feedback">
+                        Por favor, insira seu nome.
+                    </div>
+                </div>
+                <div>
+                    <label for="birth" class="form-label">Nascimento</label>
+                    <input type="date" class="form-control" id="birth" name="birth" max="<%= `${date.getFullYear() - 150}-01-01` %>" min="<%= `${date.getFullYear() - 18}-${date.getMonth()}-${date.getDate()}` %>" required>
+                    <div class="invalid-feedback">
+                        Você deve ter mais de 18 anos para se cadastrar.
+                    </div>
+                </div>
+                <div>
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" oninput="$(this).mask('000.000.000-00');" required>
+                    <div class="invalid-feedback">
+                        Insira um CPF válido.
+                    </div>
+                </div>
+                <div>
+                    <label for="rg" class="form-label">RG</label>
+                    <input type="text" class="form-control" id="rg" name="rg" placeholder="0000000-0" maxlength="9" oninput="$(this).mask('0000000-0');" required>
+                    <div class="invalid-feedback">
+                        Insira um RG válido.
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@exemplo.com" required>
+                    <div class="invalid-feedback">
+                        Insira um email válido.
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="password" name="password" oninput="$('#confirm-password').attr('pattern', $('#password').val());" required>
+                    <div class="invalid-feedback">
+                        Insira uma senha válida.
+                    </div>
+                </div>
+                <div>
+                    <label for="confirm-password" class="form-label">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" oninput="$('#confirm-password').attr('pattern', $('#password').val());" required>
+                    <div class="invalid-feedback">
+                        As senhas não coincidem.
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="agree" id="agree" name="agree">
+                    <label class="form-check-label" for="agree">
+                      Eu li e concordo com os <a href="">Termos de Privacidade e Segurança</a>
+                    </label>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-eboi btn-lg text-light" type="submit" style="height: 3em;">Cadastrar</button>
+                </div>                  
+            </div>
+        </form>
+    </main>
+
+    <!--footer-->
+    <%- include('components/gov-footer'); -%>
+
+    <script src="/js/needs-validation.js"></script>
+    <script src="/popper.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
+    <script src="/jquery.min.js"></script>
+    <script src="/jquery.mask.min.js"></script>
+</body>
+</html>

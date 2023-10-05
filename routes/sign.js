@@ -3,13 +3,12 @@ var router = express.Router();
 
 /* login */
 router.get('/', function(req, res, next){
-    res.render('signin', { title: 'sign in' });
+    res.render('signin', { title: 'Entrar'});
 });
 
 /* register */
 router.get('/new', function(req, res, next){
-    console.log('on-line');
-    res.render('signup', { title: 'sign up' });
+    res.render('signup', { title: 'Cadastrar'});
 });
 
 
