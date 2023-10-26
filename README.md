@@ -1,13 +1,73 @@
-# GitHub Codespaces ♥️ Express
 
-Welcome to your shiny new Codespace running Express! We've got everything fired up and running for you to explore Express.
+##  logo
+![EBOI-logo](https://github.com/Eboi-agrotech-etc/Eboi/blob/main/public/assets/eboi-logo.png?raw=true)
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
 
-To run this application:
+# EBOI
 
+EBOI é um site que resolve a ineficiência no processo de credenciamento de marcação animal.
+
+
+
+## Etiquetas
+
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3.svg?style=for-the-badge&logo=Bootstrap&logoColor=white)
+![Heroku](https://img.shields.io/badge/Heroku-430098.svg?style=for-the-badge&logo=Heroku&logoColor=white)
+## Autores
+
+Documentação:
+- [Henrique Belém dos Santos](https://github.com/HrickBel)
+- [Murilo Henrique Conde da Luz](https://github.com/murilo-henrique060)
+
+Time de desenvolvimento:
+- [Murilo Henrique Conde da Luz](https://github.com/murilo-henrique060)
+- [Luiz Carlos Cipriano](https://github.com/Dark-Llght)
+
+
+## Funcionalidades
+
+- Solicitar e gerenciar Registro de Marca animal
+- Pesquisar Marcas Registradas
+
+## Dependências
+- Node.js
+- npm
+- MySQL
+## Rodando localmente
+
+Certifique-se que as dependências estão instaladas
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/Eboi-agrotech-etc/Eboi
 ```
-npm start
+
+Entre no diretório do projeto
+
+```bash
+  cd Eboi
 ```
+
+Instale as dependências do projeto
+
+```bash
+  npm install
+```
+
+Inicie o servidor
+
+```bash
+  npm run start
+```
+
+
+## Licença
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
