@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
     <title> <%= title %> </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/sign.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='/bootstrap-icons.min.css'>
 
@@ -19,7 +19,10 @@
     <%- include('components/eboi-navbar'); -%> 
 
     <%
-        const date = new Date();
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth()).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
     %>
 
     <!--eboi interface-->
@@ -39,7 +42,7 @@
                 </div>
                 <div>
                     <label for="birth" class="form-label">Nascimento</label>
-                    <input type="date" class="form-control" id="birth" name="birth" max="<%= `${date.getFullYear() - 150}-01-01` %>" min="<%= `${date.getFullYear() - 18}-${date.getMonth()}-${date.getDate()}` %>" required>
+                    <input type="date" class="form-control" id="birth" name="birth" min="1000-01-01" max="<%= `${year - 18}-${month}-${day}` %>" required>
                     <div class="invalid-feedback">
                         Você deve ter mais de 18 anos para se cadastrar.
                     </div>
@@ -74,16 +77,19 @@
                 </div>
                 <div>
                     <label for="confirm-password" class="form-label">Confirmar Senha</label>
-                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" oninput="$('#confirm-password').attr('pattern', $('#password').val());" required>
+                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
                     <div class="invalid-feedback">
                         As senhas não coincidem.
                     </div>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="agree" id="agree" name="agree">
+                    <input class="form-check-input" type="checkbox" value="agree" id="agree" name="agree" required>
                     <label class="form-check-label" for="agree">
                       Eu li e concordo com os <a href="">Termos de Privacidade e Segurança</a>
                     </label>
+                    <div class="invalid-feedback">
+                        Você deve concordar com os termos de privacidade e segurança.
+                    </div>
                 </div>
                 <div class="d-grid">
                     <button class="btn btn-eboi btn-lg text-light" type="submit" style="height: 3em;">Cadastrar</button>

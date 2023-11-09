@@ -7,21 +7,3 @@ body {
 #eboi-navbar {
     background: var(--background-secondary);
 }
-
-.btn-eboi {
-    background: var(--btn-primary) !important;
-}
-
-/* eboi app */
-main {
-    background: var(--background-primary);
-}
-
-/*end*/
-/*
-.gov-br-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}*/

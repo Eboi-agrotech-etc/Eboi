@@ -1,0 +1,27 @@
+body {
+    --background-primary: #6C935A;
+    --background-secondary: #5D7E4E;
+    --btn-primary: #66AF5B
+}
+
+#eboi-navbar {
+    background: var(--background-secondary);
+}
+
+.btn-eboi {
+    background: var(--btn-primary) !important;
+}
+
+/* eboi app */
+main {
+    background: var(--background-primary);
+}
+
+/*end*/
+/*
+.gov-br-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}*/
