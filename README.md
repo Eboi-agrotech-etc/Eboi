@@ -26,6 +26,7 @@ Documentação:
 - [Murilo Henrique Conde da Luz](https://github.com/murilo-henrique060)
 
 Time de desenvolvimento:
+- [Luiz Carlos Cipriano de Castro Filho](https://github.com/Dark-Llght)
 - [Murilo Henrique Conde da Luz](https://github.com/murilo-henrique060)
 - [Luiz Carlos Cipriano](https://github.com/Dark-Llght)
 

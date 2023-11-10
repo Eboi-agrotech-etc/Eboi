@@ -11,6 +11,14 @@ const signupRouter = require('./routes/sign');
 const app = express()
 const port = 3000
 
+var db = require('./database/database');
+const proprietarios = require('./models/proprietarios');
+const funcionarios = require('./models/funcionarios');
+const cargos = require('./models/cargos');
+const marcas = require('./models/marcas');
+const marcas_assinadas = require('./models/marcasAssinadas');
+const marcas_avaliadas = require('./models/marcasAvaliadas');
+
 // view engine setup
 app.set(path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

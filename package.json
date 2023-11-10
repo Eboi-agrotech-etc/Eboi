@@ -18,9 +18,10 @@
     "jquery": "^3.7.1",
     "jquery-mask-plugin": "^1.14.16",
     "morgan": "^1.10.0",
-    "mysql": "^2.18.1"
+    "mysql2": "^3.6.3",
+    "sequelize": "^6.34.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^3.0.1"
   }
 }
