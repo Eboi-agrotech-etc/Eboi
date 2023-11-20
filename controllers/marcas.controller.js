@@ -49,3 +49,5 @@ class MarcasController {
     }
   }
 }
+
+export default new MarcasController();
