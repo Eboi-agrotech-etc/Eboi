@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+    <title>Eboi</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/bootstrap-icons.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/index.css'>
+
+    <script src='/js/script.js'></script>
+</head>
+<body class="d-flex flex-column p-0" style="min-height: 100vh;" data-bs-theme="light">
+    <!--eboi navbar-->
+    <%- include('components/eboi-navbar'); -%>
+
+    <main class="d-flex flex-fill justify-content-center" data-bs-theme="light">
+      <div class="container py-5 bg-body px-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h1>Minhas Marcas</h1>
+          
+          <a id="solicitar-marca" class="d-flex justify-content-center align-items-center btn rounded-pill text-white fs-5 px-3 py-2 gap-1" href="">
+            <i class="bi bi-plus-lg"></i>
+            Solicitar Marca
+          </a>
+        </div>
+
+        <table class="table table-hover rounded-4 overflow-hidden">
+          <thead>
+            <tr>
+              <th style="background-color: #46AD44; color: white; padding-left: 15px;">ID</th>
+              <th style="background-color: #46AD44; color: white;">Brinco</th>
+              <th style="background-color: #46AD44; color: white;">Corpo</th>
+              <th style="background-color: #46AD44; color: white;">Estado</th>
+              <th style="background-color: #46AD44; color: white;"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% for (let i = 0; i < marcas.length; i++) { %>
+              <tr>
+                <td style="background-color: #F8F8F8; padding-left: 15px;"><%= marcas[i].id %></td>
+                <td style="background-color: #F8F8F8;" class="btn-link" onclick="openPreview('<%= marcas[i].brinco %>')">
+                  <i class="bi bi-eye"></i>
+                  Clique para Visualizar
+                </td>
+                <td style="background-color: #F8F8F8;" class="btn-link" onclick="openPreview('<%= marcas[i].brinco %>')">
+                  <i class="bi bi-eye"></i>
+                  Clique para Visualizar
+                </td>
+                <td style="background-color: #F8F8F8;"><%= marcas[i].estado %></td>
+                <td style="background-color: #F8F8F8;">
+                  <a class="text-decoration-none" href="/marcas/delete/<%= marcas[i].id %>">
+                    <i class="bi bi-trash text-danger"></i>
+                  </a>
+  
+                  <a class="text-decoration-none" href="/marcas/edit/<%= marcas[i].id %>">
+                    <i class="bi bi-chevron-right"></i>
+                  </a>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!--eboi footer-->
+    <%- include('components/eboi-footer'); -%>
+
+    <script src="/js/script.js"></script>
+    <script src="/popper.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
+    <script src="/jquery.min.js"></script>
+    <script src="/jquery.mask.min.js"></script>
+</body>
+</html>

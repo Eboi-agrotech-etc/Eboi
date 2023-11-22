@@ -1,9 +1,17 @@
-body {
+:root {
     --background-primary: #6C935A;
     --background-secondary: #5D7E4E;
-    --btn-primary: #66AF5B
+    --background-tertiary: #71B054;
+    --btn-primary: #66AF5B;
+}
+main {
+    background: var(--background-tertiary);
 }
 
 #eboi-navbar, #eboi-footer {
     background: var(--background-secondary);
+}
+
+#solicitar-marca {
+    background: var(--background-tertiary) !important;
 }
