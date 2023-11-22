@@ -6,6 +6,7 @@ const logger = require('morgan');
 const ejs = require('ejs');
 
 const indexRouter = require('./routes/index');
+const homeRouter = require('./routes/home');
 const signupRouter = require('./routes/sign');
 
 const app = express()
@@ -39,6 +40,7 @@ app.use(cookieParser());
 
 // routes setup
 app.use('/', indexRouter);
+app.use('/home', homeRouter);
 app.use('/signin', signupRouter);
 
 app.listen(port, () => {

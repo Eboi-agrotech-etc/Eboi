@@ -4,6 +4,6 @@ body {
     --btn-primary: #66AF5B
 }
 
-#eboi-navbar {
+#eboi-navbar, #eboi-footer {
     background: var(--background-secondary);
 }
