@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+    <title>Eboi</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/bootstrap-icons.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/index.css'>
+
+    <script src='/js/script.js'></script>
+</head>
+<body class="d-flex flex-column p-0" style="min-height: 100vh;" data-bs-theme="light">
+    <!--eboi navbar-->
+    <%- include('components/eboi-navbar'); -%>
+
+    <main class="d-flex flex-fill justify-content-center" data-bs-theme="light">
+      <div class="container py-5 bg-body px-5 gap-1">
+        <div class="d-flex align-items-center mb-2">
+          <h1>Marca <%= marca.id %></h1>
+        </div>
+        <div class="d-flex align-items-center">
+          Id: <%= marca.id %>
+        </div>
+        <div class="d-flex align-items-center">
+          Proprietário: <%= marca.proprietario %>
+        </div>
+        <div class="d-flex align-items-center">
+          Estado: <%= marca.estado %>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="d-flex flex-column">
+            Marca do Brinco
+            <img src="<%= marca.brinco %>" style="width: 15rem;">
+          </div>
+          <div class="d-flex flex-column">
+            Marca do Corpo
+            <img src="<%= marca.brinco %>" style="width: 15rem;">
+          </div>
+        </div>
+        <div class="d-flex align-items-center">
+          Data de Solicitação: <%= marca.data_solicitacao %>
+        </div>
+        <div class="d-flex align-items-center">
+          Data de Aprovação: <%= marca.data_aprovação %>
+        </div>
+        <div class="d-flex align-items-center">
+          Aprovado por: <%= marca.aprovado %>
+        </div>
+        <div class="d-flex align-items-center">
+          Assinado por: <%= marca.assinado %>
+        </div>
+        <div class="d-flex align-items-center justify-content-end">
+          <a class="btn btn-danger" href="/marcas/delete/<%= marca.id %>">
+            Cancelar Solicitação
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!--eboi footer-->
+    <%- include('components/eboi-footer'); -%>
+
+    <script src="/js/script.js"></script>
+    <script src="/popper.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
+    <script src="/jquery.min.js"></script>
+    <script src="/jquery.mask.min.js"></script>
+</body>
+</html>
