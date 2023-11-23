@@ -1,23 +1,38 @@
-import marcas from '../models/marcas.model.js';
+const marcas = require('../models/marcas');
 
 class MarcasController {
   // Cria uma nova marca
-  async createMarca(req, res) {
+  async createMarca(brinco, corpo, idproprietario) {
     try {
-      const marca = await marcas.create(req.body);
-      return res.status(200).json(marca);
+      const marca = await marcas.create({brinco: brinco, corpo: corpo, idproprietario: idproprietario ?? 0});
+      return marca;
     } catch (err) {
-      return res.status(500).json(err);
+      console.error(err);
     }
   }
 
   // Retorna todas as marcas
-  async listMarcas(req, res) {
+  async listMarcas() {
     try {
       const marca = await marcas.findAll();
-      return res.status(200).json(marca);
+      marca.forEach(marca => {
+        marca.corpo = marca.corpo.toString();
+        marca.brinco = marca.brinco.toString();
+      });
+      return marca;
     } catch (err) {
-      return res.status(500).json(err);
+      console.error(err);
+    }
+  }
+
+  async getMarca(id) {
+    try {
+      const marca = await marcas.findByPk(id);
+      marca.corpo = marca.corpo.toString();
+      marca.brinco = marca.brinco.toString();
+      return marca;
+    } catch (err) {
+      console.error(err);
     }
   }
 
@@ -36,18 +51,17 @@ class MarcasController {
   }
 
   // Deleta a marca com o id passado
-  async deleteMarca(req, res) {
+  async deleteMarca(id) {
     try {
       const marca = await marcas.destroy({
         where: {
-          id: req.params.id,
+          id: id,
         },
       });
-      return res.status(200).json(marca);
     } catch (err) {
-      return res.status(500).json(err);
+      console.error(err);
     }
   }
 }
 
-export default new MarcasController();
+module.exports = new MarcasController();

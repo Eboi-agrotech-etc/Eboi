@@ -8,7 +8,7 @@ const proprietarios = db.define('proprietarios',{
         autoIncrement:true
     },
     cpf:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.STRING(11),
         primaryKey:true
     },
     nome:{

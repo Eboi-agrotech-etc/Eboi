@@ -14,21 +14,26 @@ const marcas = db.define('marcas',{
         type:DataTypes.BLOB('long'),
         allowNull:false
     },
-    idproprietario:{
-        type:DataTypes.INTEGER,
-        allowNull:false,
-        references:{
-            model:'proprietarios',
-            key:'id'
+    estado: {
+        type: DataTypes.STRING,
+        defaultValue: 'Em análise'
+    },
+    
+        idproprietario:{
+            type:DataTypes.INTEGER,
+            allowNull:false,
+            references:{
+                model:'proprietarios',
+                key:'id'
+            }
         }
-    }
-});
-/*
-marcas.sync().then(() => {
-    console.log('marcas table sync...');
-}).catch(err => {
-    console.error('marcas fail:',err); 
-});
-*/
+    });
 
-module.exports = marcas;
+    /*
+    marcas.sync({alter: true}).then(() => {
+        console.log('marcas table sync...');
+    }).catch(err => {
+        console.error('marcas fail:',err); 
+    });*/
+
+    module.exports = marcas;
